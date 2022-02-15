@@ -21,10 +21,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/cadastro_hospede', function () {
-    return view('cadastro_hospede');
-})->name('cadastro_hospede');
+Route::middleware(['auth:sanctum', 'verified'])->get('/reserva', function () {
+    return view('reserva');
+})->name('reserva');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/cadastro_quarto', function () {
-    return view('cadastro_quarto');
-})->name('cadastro_quarto');
+Route::middleware(['auth:sanctum', 'verified'])->get('/funcionario', function () {
+    return view('funcionario');
+})->name('funcionario');

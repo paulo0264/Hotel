@@ -2,20 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\WelcomesController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [WelcomesController::class, 'index']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
@@ -28,3 +17,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/reserva', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/funcionario', function () {
     return view('funcionario');
 })->name('funcionario');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/quarto', function () {
+    return view('quarto');
+})->name('quarto');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/add_quarto', function () {
+    return view('add_quarto');
+})->name('add_quarto');

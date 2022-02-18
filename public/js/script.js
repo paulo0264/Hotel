@@ -45,3 +45,31 @@ $(document).ready(function () {
     $(table).DataTable();
   });
 });
+
+/* Checkin - Check-out */
+
+const dayHourIn = "20/01/2022 10:01:00"
+
+const dayHourOut = "20/01/2022 14:34:00"
+
+function convertDateHourToMs(dateHour){
+    const [date, hours] = dateHour.split(' ')
+    const [day, month, year] = date.split('/')
+    const [hour, minutes, seconds] = hours.split(':')
+
+    const newDate = new Date(year, month - 1, day, hour, minutes, seconds)
+
+    return newDate.getTime()
+}
+
+const stayedTimeInSeconds = (convertDateHourToMs() - convertDateHourToMs(dayHourIn)) / 1000
+
+// formatar meus tempo de estadia
+const dayInSeconds = 24 * 60 * 60
+const hourInSeconds = 60 * 60
+const minutesInSeconds = 60
+
+const days = Math.floor(stayedTimeInSeconds / dayInSeconds)
+const hours = Math.floor(stayedTimeInSeconds / hourInSeconds) % 24
+const minutes = Math.floor(stayedTimeInSeconds / minutesInSeconds) % 60
+const seconds = stayedTimeInSeconds % 60

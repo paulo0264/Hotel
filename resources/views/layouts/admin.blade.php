@@ -106,7 +106,7 @@
               </div>
             </li>
             <li>
-              <a href="/logout" class="nav-link px-3">
+              <a href="/quarto" class="nav-link px-3">
                 <span class="me-2"><i class="bi bi-door-closed-fill"></i></span>
                 <span>Quartos</span>
               </a>

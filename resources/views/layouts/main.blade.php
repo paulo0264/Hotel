@@ -56,15 +56,18 @@
           <i class="bi bi-list"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbar-items">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-flex justify-content-end">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Projetos</a>
+              <a class="nav-link" href="#">Acomodações</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Imóveis</a>
+              <a class="nav-link" href="#">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre nós</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contato</a>
@@ -78,95 +81,7 @@
         </div>
       </div>
     </nav>
-<!--
-    <header class="col-md-12 menu">
 
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
-                    <a href="/" class="navbar-brand navbar">
-                        <img src="/img/hotel.png" alt="Logo">
-                    </a>
-                    <div class="mx-auto"></div>
-                    <ul class="navbar-nav" id="navbar">
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Hotel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/" class="nav-link">Contato</a>
-                        </li>
-                        @auth
-                            <li class="nav-item">
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <a href="/logout" class="nav-link"
-                                        onclick="event.preventDefault();
-                                        this.closest('form').submit();">Sair</a>
-                                </form>
-                            </li>
-                        @endauth
-                        @guest
-                        <li class="nav-item">
-                            <a href="/login" class="nav-link">Logar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/register" class="nav-link">Cadastrar</a>
-                        </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-        <!--<a href="/" class="navbar-brand navbar">
-            <img src="/img/hotel.png" alt="Logo">
-        </a>-->
-
-    <!--<nav class="navbar navbar-expand-lg navbar-light">
-        <div class="collapse navbar-collapse" id="navbar">
-            <a href="/" class="navbar-brand">
-                <img src="/img/hotel.png" alt="Logo">
-            </a>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Hotel</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Serviços</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Contato</a>
-                </li>
-                @auth
-                    <li class="nav-item">
-                        <a href="/dashboard" class="nav-link">Dash</a>
-                    </li>
-                    <li class="nav-item">
-                        <form action="/logout" method="POST">
-                            @csrf
-                            <a href="/logout" class="nav-link"
-                                onclick="event.preventDefault();
-                                this.closest('form').submit();">Sair</a>
-                        </form>
-                    </li>
-                @endauth
-                @guest
-                <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/register" class="nav-link">Cadastrar</a>
-                </li>
-                @endguest
-            </ul>
-        </div>
-    </nav>-->
     @yield('content')
     <!-- FOOTER -->
     <footer class="container-fluid bg-dark-color" id="footer">

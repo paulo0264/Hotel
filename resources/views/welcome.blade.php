@@ -33,21 +33,21 @@
           <div class="carousel-item active">
             <img src="img/banner-1.jpg" class="d-block w-100" alt="Casa 1" />
             <div class="carousel-caption">
-              <h5>Casas planejadas</h5>
+              <h5>Super Acomodações</h5>
               <!--<a href="#" class="btn btn-dark">Ver Projeto</a>-->
             </div>
           </div>
           <div class="carousel-item">
             <img src="img/banner-2.jpg" class="d-block w-100" alt="Casa 2" />
             <div class="carousel-caption">
-              <h5>Projetos Complexos</h5>
+              <h5>Vista para o Mar</h5>
               <!--<a href="#" class="btn btn-dark">Ver Projeto</a>-->
             </div>
           </div>
           <div class="carousel-item">
             <img src="img/banner-3.jpg" class="d-block w-100" alt="Casa 3" />
             <div class="carousel-caption">
-              <h5>Projetos Inovadores</h5>
+              <h5>Paz e Tranquilidade</h5>
               <!--<a href="#" class="btn btn-dark">Ver Projeto</a>-->
             </div>
           </div>
@@ -75,39 +75,36 @@
         <div class="row">
           <div class="col-12 col-md-4">
             <div class="card text-center">
-              <i class="bi bi-box primary-color"></i>
+              <i class="bi bi-wifi"></i>
               <div class="card-body">
-                <h5 class="card-title primary-color">Projetos completos</h5>
+                <h5 class="card-title primary-color">Wifi</h5>
                 <p class="card-text secondary-color">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                <a href="#" class="btn btn-dark">Saber Mais</a>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="card text-center">
-              <i class="bi bi-layers primary-color"></i>
+              <i class="bi bi-tv"></i>
               <div class="card-body">
-                <h5 class="card-title primary-color">Você participa também</h5>
+                <h5 class="card-title primary-color">TV</h5>
                 <p class="card-text secondary-color">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                <a href="#" class="btn btn-dark">Saber Mais</a>
               </div>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <div class="card text-center">
-              <i class="bi bi-lightning-charge"></i>
+              <i class="bi bi-brightness-low"></i>
               <div class="card-body primary-color">
                 <h5 class="card-title primary-color">
-                  Adiantamento de entregas
+                  Ar
                 </h5>
                 <p class="card-text secondary-color">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </p>
-                <a href="#" class="btn btn-dark">Saber Mais</a>
               </div>
             </div>
           </div>
@@ -123,7 +120,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <div class="card text-center">
-                <img src="img/room2.png" class="card-img-top" alt="quartos">
+                <img src="img/room1.jpg" class="card-img-top" alt="quartos">
                     <div class="card-body">
                     <h5 class="card-title primary-color">Projetos completos</h5>
                     <p class="card-text secondary-color">
@@ -136,7 +133,7 @@
 
             <div class="col-12 col-md-4">
                 <div class="card text-center">
-                <img src="img/room2.png" class="card-img-top" alt="quartos">
+                <img src="img/room2.jpg" class="card-img-top" alt="quartos">
                     <div class="card-body">
                     <h5 class="card-title primary-color">Projetos completos</h5>
                     <p class="card-text secondary-color">
@@ -149,7 +146,7 @@
 
             <div class="col-12 col-md-4">
                 <div class="card text-center">
-                <img src="img/room2.png" class="card-img-top" alt="quartos">
+                <img src="img/room3.jpg" class="card-img-top" alt="quartos">
                     <div class="card-body">
                     <h5 class="card-title primary-color">Projetos completos</h5>
                     <p class="card-text secondary-color">
@@ -170,7 +167,7 @@
       <div class="col-12">
         <h2 class="title primary-color">Eventos em Destaque</h2>
         <p class="subtitle secondary-color">
-          Conheça nossos projetos mais desafiadores
+          Conheça nossos Entretenimentos
         </p>
       </div>
       <div class="col-12" id="featured-images">
@@ -178,22 +175,19 @@
           <div class="col-12 col-md-4">
             <img src="img/event.jpg" alt="Projeto 1" class="img-fluid" />
             <div class="banner-content">
-              <p class="secondary-color">Categoria</p>
-              <h3>Nome do Projeto</h3>
+              <h3>Eventos</h3>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <img src="img/gastronomia.jpg" alt="Projeto 2" class="img-fluid" />
             <div class="banner-content">
-              <p class="secondary-color">Categoria</p>
-              <h3>Nome do Projeto</h3>
+              <h3>Ambiente Aconchegante</h3>
             </div>
           </div>
           <div class="col-12 col-md-4">
             <img src="img/lazer.jpg" alt="Projeto 3" class="img-fluid" />
             <div class="banner-content">
-              <p class="secondary-color">Categoria</p>
-              <h3>Nome do Projeto</h3>
+              <h3>Lazer</h3>
             </div>
           </div>
         </div>
@@ -246,6 +240,40 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="container mb-3">
+    <div class="col-12">
+        <h2 class="title primary-color">Entre em Contato conosco</h2>
+      </div>
+        <div class="row mt-3">
+            <div class="col-3">
+                <label>Check-in:</label>
+                <input type="date" class="form-control" name="DateIn" placeholder="Please Enter Price"/>
+            </div>
+            <div class="col-3">
+                <label>Check-out:</label>
+                <input type="date" class="form-control" name="DateOut" placeholder="Please Enter Price"/>
+            </div>
+            <div class="form-group">
+                <label>Nome Completo:</label>
+                <input class="form-control" name="name" placeholder="Nome"/>
+            </div>
+            <div class="form-group">
+                <label>Telefone:</label>
+                <input class="form-control" name="phone" placeholder="Telefone"/>
+            </div>
+            <div class="form-group">
+                <label>E-mail:</label>
+                <input class="form-control" name="email" placeholder="Email"/>
+            </div>
+        </div>
+        <label for="">Quartos:</label>
+            <select name="" id="" class="form-select">
+                <option value="">Quarto Duplo</option>
+                <option value="">Quarto Luxo 326</option>
+                <option value="">Quarto Luxo 256</option>
+            </select>
+        <input class="btn btn-primary mt-3" type="submit" value="Enviar">
     </div>
 
 @endsection

@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomesController;
 
 Route::get('/', [WelcomesController::class, 'index']);
+Route::get('/welcome',[WelcomesController::class, 'create']);
+Route::post('/welcome',[WelcomesController::class, 'store']);
+
+
+//Routs Admin
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

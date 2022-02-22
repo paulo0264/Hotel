@@ -61,16 +61,16 @@
               <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Acomodações</a>
+              <a class="nav-link" href="#acomodações">Acomodações</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Eventos</a>
+              <a class="nav-link" href="#eventos">Eventos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sobre nós</a>
+              <a class="nav-link" href="#sobrenos">Sobre nós</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contato</a>
+              <a class="nav-link" href="#contato">Contato</a>
             </li>
             @guest
             <li class="nav-item">
@@ -85,7 +85,7 @@
     @yield('content')
     <!-- FOOTER -->
     <footer class="container-fluid bg-dark-color" id="footer">
-      <div class="container">
+      <div class="container" id="contato">
         <div class="row">
           <!-- FOOTER TOP -->
           <div class="col-12" id="footer-top">
@@ -132,18 +132,14 @@
                   <h4>Você pode estar buscando por:</h4>
                   <div class="col-6">
                     <ul class="list-unstyled">
-                      <li><a href="#" class="secondary-color">Eventos</a></li>
-                      <li><a href="#" class="secondary-color">Acomodações</a></li>
-                      <li><a href="#" class="secondary-color">Vendas</a></li>
+                      <li><a href="#eventos" class="secondary-color">Eventos</a></li>
+                      <li><a href="#acomodações" class="secondary-color">Acomodações</a></li>
+                      <li><a href="#sobrenos" class="secondary-color">Sobre Nós</a></li>
                     </ul>
                   </div>
                   <div class="col-6">
                     <ul class="list-unstyled">
-                      <li><a href="#" class="secondary-color">Contratar</a></li>
-                      <li>
-                        <a href="#" class="secondary-color">Trabalhe conosco</a>
-                      </li>
-                      <li><a href="#" class="secondary-color">Contato</a></li>
+                      <li><a href="#contato" class="secondary-color">Contato</a></li>
                     </ul>
                   </div>
                 </div>

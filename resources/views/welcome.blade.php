@@ -114,7 +114,7 @@
 
     <!-- DESTAQUES -->
     <div class="container" id="featured-container">
-        <div class="row">
+        <div class="row" id="acomodações">
             <div class="col-12">
                 <h2 class="title primary-color">Nossas Acomodações</h2>
             </div>
@@ -164,7 +164,7 @@
 
     <!-- DESTAQUES -->
     <div class="container" id="featured-container">
-      <div class="col-12">
+      <div class="col-12" id="eventos">
         <h2 class="title primary-color">Eventos em Destaque</h2>
         <p class="subtitle secondary-color">
           Conheça nossos Entretenimentos
@@ -195,8 +195,8 @@
     </div>
     <!-- INFO -->
     <div class="container" id="info-container">
-      <div class="col-12">
-        <h2 class="title primary-color">Detalhes Importantes</h2>
+      <div class="col-12" id="sobrenos">
+        <h2 class="title primary-color">Sobre Nós</h2>
         <p class="subtitle secondary-color">
           Saiba mais sobre a experiência da nossa incrível equipe
         </p>
@@ -242,38 +242,56 @@
       </div>
     </div>
     <div class="container mb-3">
-    <div class="col-12">
-        <h2 class="title primary-color">Entre em Contato conosco</h2>
-      </div>
+        <div class="col-12">
+            <h2 class="title primary-color">Pre-Reserva</h2>
+        </div>
+        <form action="/welcome" method="POST">
+            @csrf
         <div class="row mt-3">
             <div class="col-3">
-                <label>Check-in:</label>
-                <input type="date" class="form-control" name="DateIn" placeholder="Please Enter Price"/>
+                <label for="validationCustom01">Check-in:</label>
+                <input type="date" class="form-control" name="check_in" id="validationCustom01" placeholder="Please Enter Price" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
             <div class="col-3">
-                <label>Check-out:</label>
-                <input type="date" class="form-control" name="DateOut" placeholder="Please Enter Price"/>
+                <label for="validationCustom02">Check-out:</label>
+                <input type="date" class="form-control" name="check_out" id="validationCustom02" placeholder="Please Enter Price" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
             <div class="form-group">
-                <label>Nome Completo:</label>
-                <input class="form-control" name="name" placeholder="Nome"/>
+                <label for="validationCustomUsername">Nome Completo:</label>
+                <input class="form-control" name="name" id="validationCustomUsername" placeholder="Nome" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
             <div class="form-group">
-                <label>Telefone:</label>
-                <input class="form-control" name="phone" placeholder="Telefone"/>
+                <label for="validationCustomUsername">Telefone:</label>
+                <input class="form-control" name="telefone" id="validationCustomUsername" placeholder="Telefone" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
             <div class="form-group">
-                <label>E-mail:</label>
-                <input class="form-control" name="email" placeholder="Email"/>
+                <label for="validationCustomUsername">E-mail:</label>
+                <input class="form-control" name="email" id="validationCustomUsername" placeholder="Email" required/>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
             </div>
         </div>
-        <label for="">Quartos:</label>
-            <select name="" id="" class="form-select">
-                <option value="">Quarto Duplo</option>
-                <option value="">Quarto Luxo 326</option>
-                <option value="">Quarto Luxo 256</option>
+            <label for="">Quartos:</label>
+            <select name="quarto" id="" class="form-select">
+                <option value="Quarto Duplo">Quarto Duplo</option>
+                <option value="Quarto Luxo 326">Quarto Luxo 326</option>
+                <option value="Quarto Luxo 256">Quarto Luxo 256</option>
             </select>
-        <input class="btn btn-primary mt-3" type="submit" value="Enviar">
+            <input class="btn btn-primary mt-3" type="submit" value="Enviar">
+            </form>
     </div>
 
 @endsection

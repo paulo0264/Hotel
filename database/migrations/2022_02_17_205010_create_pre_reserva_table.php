@@ -13,7 +13,7 @@ class CreatePreReservaTable extends Migration
      */
     public function up()
     {
-        Schema::create('pre_reserva', function (Blueprint $table) {
+        Schema::create('welcome', function (Blueprint $table) {
             $table->id();
             $table->date('check_in');
             $table->date('check_out');

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomesController;
 
+use App\Http\Controllers\Add_quartoController;
+
 Route::get('/', [WelcomesController::class, 'index']);
 Route::get('/welcome',[WelcomesController::class, 'create']);
 Route::post('/welcome',[WelcomesController::class, 'store']);
@@ -27,6 +29,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/quarto', function () {
     return view('quarto');
 })->name('quarto');
 
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/add_quarto', function () {
     return view('add_quarto');
 })->name('add_quarto');
+//Route::middleware(['auth:sanctum', 'verified'])->get('/add_quarto',[Add_quartoController::class, 'index']);
+//Route::middleware(['auth:sanctum', 'verified'])->get('/add_quarto',[Add_quartoController::class, 'create']);
+Route::middleware(['auth:sanctum', 'verified'])->post('/add_quarto',[Add_quartoController::class, 'store']);

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\WelcomeModel;
 
+
 class WelcomesController extends Controller
 {
     public function index(){

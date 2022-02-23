@@ -9,13 +9,16 @@
 
     <div class="container">
     <h2 class="mb-3">Adicionar Quartos</h2>
-    <form action="admin/category_room/addpost" method="POST" enctype="multipart/form-data">
+    <form action="/add_quarto" method="POST">
             @csrf
-        <input type="hidden" name="_token" value="{">
-
         <div class="form-group">
             <label>Acomodação</label>
             <input class="form-control" name="name"  />
+        </div>
+
+        <div class="form-group">
+            <label>Preço</label>
+            <input class="form-control" name="price"  />
         </div>
 
         <div class="form-group">
@@ -25,11 +28,11 @@
 
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Descrição</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
 
-        <button type="button" class="btn btn-primary mt-3">Cadastrar</button>
+        <input class="btn btn-primary mt-3" type="submit" value="Cadastrar">
     <form>
     </div>
 </main>

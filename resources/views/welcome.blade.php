@@ -5,7 +5,7 @@
 @section('content')
 
 <!-- SLIDER -->
-<div class="container" id="slider-container">
+<div class="" id="slider-container">
       <div id="slider" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button
@@ -112,51 +112,7 @@
       </div>
     </div>
 
-    <!-- DESTAQUES -->
-    <div class="container" id="featured-container">
-        <div class="row" id="acomodações">
-            <div class="col-12">
-                <h2 class="title primary-color">Nossas Acomodações</h2>
-            </div>
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room1.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Acomodações Luxo</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="/luxo" class="btn btn-dark">Saber Mais</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room2.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Projetos completos</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="#" class="btn btn-dark">Saber Mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room3.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Projetos completos</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="#" class="btn btn-dark">Saber Mais</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- DESTAQUES -->
     <div class="container mt-3" id="featured-container">
@@ -305,34 +261,37 @@
                     Looks good!
                 </div>
             </div>
-            <div class="form-group">
+        </div>
+            <div class="col-5">
                 <label for="validationCustomUsername">Nome Completo:</label>
                 <input class="form-control" name="name" id="validationCustomUsername" placeholder="Nome" required/>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <div class="form-group">
+            <div class="col-5">
                 <label for="validationCustomUsername">Telefone:</label>
                 <input class="form-control" name="telefone" id="validationCustomUsername" placeholder="Telefone" required/>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-            <div class="form-group">
+            <div class="col-5">
                 <label for="validationCustomUsername">E-mail:</label>
                 <input class="form-control" name="email" id="validationCustomUsername" placeholder="Email" required/>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
-        </div>
-            <label for="">Quartos:</label>
-            <select name="quarto" id="" class="form-select">
-                <option value="Quarto Duplo">Quarto Duplo</option>
-                <option value="Quarto Luxo 326">Quarto Luxo 326</option>
-                <option value="Quarto Luxo 256">Quarto Luxo 256</option>
-            </select>
+
+            <div class="col-5">
+                <label for="">Quartos:</label>
+                <select name="quarto" id="" class="form-select">
+                    <option value="Quarto Duplo">Quarto Duplo</option>
+                    <option value="Quarto Luxo 326">Quarto Luxo 326</option>
+                    <option value="Quarto Luxo 256">Quarto Luxo 256</option>
+                </select>
+            </div>
             <input class="btn btn-primary mt-3" type="submit" value="Enviar">
             </form>
     </div>

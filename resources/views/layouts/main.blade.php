@@ -84,7 +84,7 @@
 
     @yield('content')
     <!-- FOOTER -->
-    <footer class="container-fluid bg-dark-color" id="footer">
+    <footer class="footer" id="footer">
       <div class="container" id="contato">
         <div class="row">
           <!-- FOOTER TOP -->

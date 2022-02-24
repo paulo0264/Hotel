@@ -65,7 +65,6 @@
 
   /* SLIDER */
   #slider {
-    margin-top: 8em;
     margin-bottom: 1em;
   }
 
@@ -247,8 +246,9 @@
   }
 
   /* FOOTER TOP */
-  #footer {
-    padding: 3em 2em;
+  footer {
+      padding: 2rem 2rem ;
+    background-color: #0000FF;
   }
 
   #footer-top {
@@ -257,7 +257,7 @@
 
   #footer-top,
   #footer-top i {
-    color: #fff;
+    color: rgb(19, 18, 18);
   }
 
   #social-icons {
@@ -288,7 +288,7 @@
   }
 
   #footer-details h4 {
-    color: #fff;
+    color: rgb(10, 9, 9);
     margin-bottom: 1.5em;
   }
 
@@ -306,7 +306,7 @@
   }
 
   #links-container a:hover {
-    color: #fff;
+    color: rgb(17, 16, 16);
   }
 
   /* FOOTER BOTTOM */

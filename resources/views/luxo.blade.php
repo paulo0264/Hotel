@@ -5,102 +5,64 @@
 @section('content')
 
 
-        <!-- DESTAQUES -->
+<!-- DESTAQUES -->
 <div class="container" id="opcoes">
-      <div class="col-12" id="eventos">
-        <h2 class="title primary-color">Acomodações</h2>
-        <p class="subtitle secondary-color">
-          Conheça nossas Acomodações
-        </p>
-      </div>
-    <div class="container mt-3" id="featured-container">
-        <div class="row" id="acomodações">
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room1.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Acomodações Luxo</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
 
-                        <a href="#" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">Reservar</a>
-
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room2.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Projetos completos</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="/superluxo" class="btn btn-dark">Saber Mais</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room3.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Projetos completos</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="/simples" class="btn btn-dark">Saber Mais</a>
-                    </div>
-                </div>
-            </div>
+    <div class="container mb-3">
+        <div class="col-12">
+            <h2 class="title primary-color">Pre-Reserva</h2>
         </div>
-    </div>
-
-    <div class="container mt-3" id="featured-container">
-        <div class="row" id="acomodações">
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room1.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Acomodações Luxo</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="/luxo" class="btn btn-dark">Saber Mais</a>
+        <form action="/welcome" method="POST">
+            @csrf
+            <div class="row mt-3">
+                <div class="col-3">
+                    <label for="validationCustom01">Check-in:</label>
+                    <input type="date" class="form-control" name="check_in" id="validationCustom01"
+                        placeholder="Please Enter Price" required />
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-3">
+                    <label for="validationCustom02">Check-out:</label>
+                    <input type="date" class="form-control" name="check_out" id="validationCustom02"
+                        placeholder="Please Enter Price" required />
+                    <div class="valid-feedback">
+                        Looks good!
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room2.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Projetos completos</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="/superluxo" class="btn btn-dark">Saber Mais</a>
-                    </div>
+            <div class="col-5">
+                <label for="validationCustomUsername">Nome Completo:</label>
+                <input class="form-control" name="name" id="validationCustomUsername" placeholder="Nome" required />
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-5">
+                <label for="validationCustomUsername">Telefone:</label>
+                <input class="form-control" name="telefone" id="validationCustomUsername" placeholder="Telefone"
+                    required />
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-5">
+                <label for="validationCustomUsername">E-mail:</label>
+                <input class="form-control" name="email" id="validationCustomUsername" placeholder="Email" required />
+                <div class="valid-feedback">
+                    Looks good!
                 </div>
             </div>
 
-            <div class="col-12 col-md-4">
-                <div class="card text-center">
-                <img src="img/room3.jpg" class="card-img-top" alt="quartos">
-                    <div class="card-body">
-                    <h5 class="card-title primary-color">Projetos completos</h5>
-                    <p class="card-text secondary-color">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <a href="/simples" class="btn btn-dark">Saber Mais</a>
-                    </div>
-                </div>
+            <div class="col-5">
+                <label for="">Quarto:</label>
+                <select name="quarto" id="" class="form-select">
+                    <option value="Quarto Duplo">Luxo</option>
+                </select>
             </div>
-        </div>
+            <input class="btn btn-primary mt-3" type="submit" value="Enviar">
+        </form>
     </div>
 
 </div>

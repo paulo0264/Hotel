@@ -109,8 +109,16 @@
                         <p class="card-text secondary-color">
                             Conheça nossas acomodações de Luxo.
                         </p>
-                        <a href="/luxo" class="btn btn-dark">Ver Mais</a>
+                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                        <a href="/luxo" class="btn btn-primary">Reservar</a>
                     </div>
+                </div>
+            </div>
+
+            <div class="modal">
+                <div class="content">
+                    <h1 class="title">Olá, eu sou um modal!</h1>
+                    <p class="text">Você pode me fechar clicando fora desta área.</p>
                 </div>
             </div>
 
@@ -122,7 +130,8 @@
                         <p class="card-text secondary-color">
                             Conheça nossas acomodações Super Luxo.
                         </p>
-                        <a href="/superluxo" class="btn btn-dark">Ver Mais</a>
+                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -135,7 +144,8 @@
                         <p class="card-text secondary-color">
                             Conheça nossas acomodações Simples.
                         </p>
-                        <a href="/simples" class="btn btn-dark">Ver Mais</a>
+                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -215,63 +225,6 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container mb-3">
-    <div class="col-12">
-        <h2 class="title primary-color">Pre-Reserva</h2>
-    </div>
-    <form action="/welcome" method="POST">
-        @csrf
-        <div class="row mt-3">
-            <div class="col-3">
-                <label for="validationCustom01">Check-in:</label>
-                <input type="date" class="form-control" name="check_in" id="validationCustom01"
-                    placeholder="Please Enter Price" required />
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-            <div class="col-3">
-                <label for="validationCustom02">Check-out:</label>
-                <input type="date" class="form-control" name="check_out" id="validationCustom02"
-                    placeholder="Please Enter Price" required />
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
-            </div>
-        </div>
-        <div class="col-5">
-            <label for="validationCustomUsername">Nome Completo:</label>
-            <input class="form-control" name="name" id="validationCustomUsername" placeholder="Nome" required />
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-5">
-            <label for="validationCustomUsername">Telefone:</label>
-            <input class="form-control" name="telefone" id="validationCustomUsername" placeholder="Telefone" required />
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-        <div class="col-5">
-            <label for="validationCustomUsername">E-mail:</label>
-            <input class="form-control" name="email" id="validationCustomUsername" placeholder="Email" required />
-            <div class="valid-feedback">
-                Looks good!
-            </div>
-        </div>
-
-        <div class="col-5">
-            <label for="">Quartos:</label>
-            <select name="quarto" id="" class="form-select">
-                <option value="Quarto Duplo">Quarto Duplo</option>
-                <option value="Quarto Luxo 326">Quarto Luxo 326</option>
-                <option value="Quarto Luxo 256">Quarto Luxo 256</option>
-            </select>
-        </div>
-        <input class="btn btn-primary mt-3" type="submit" value="Enviar">
-    </form>
 </div>
 
 @endsection

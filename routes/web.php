@@ -3,12 +3,26 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomesController;
+use App\Http\Controllers\LuxoController;
 
 use App\Http\Controllers\Add_quartoController;
 
 Route::get('/', [WelcomesController::class, 'index']);
 Route::get('/welcome',[WelcomesController::class, 'create']);
 Route::post('/welcome',[WelcomesController::class, 'store']);
+
+//Acomodações
+Route::get('/luxo', [LuxoController::class, 'index']);
+Route::get('/luxo',[LuxoController::class, 'create']);
+Route::post('/luxo',[LuxoController::class, 'store']);
+//Fim Acomodações
+
+
+
+
+
+
+
 
 
 //Routs Admin

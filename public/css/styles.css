@@ -3,7 +3,7 @@
   }
 
   .bg-primary-color {
-    background-color: #1E90FF;
+    background-color: rgb(129, 196, 238);
   }
 
   .bg-secondary-color {
@@ -11,7 +11,7 @@
   }
 
   .bg-dark-color {
-    background-color: #1E90FF;
+    background-color: rgb(129, 196, 238);
   }
 
   .primary-color {
@@ -24,7 +24,7 @@
 
   /* NAVBAR */
   #navbar {
-    border-bottom: 1px solid #7a7a7a;
+
   }
 
   #navbar a {
@@ -248,7 +248,6 @@
   /* FOOTER TOP */
   footer {
       padding: 2rem 2rem ;
-    background-color: #0000FF;
   }
 
   #footer-top {
@@ -334,6 +333,10 @@
       padding-left: 2em;
     }
   }
+
+#opcoes {
+    padding-top: 160px;
+}
 
 /* CSS Painel*/
 

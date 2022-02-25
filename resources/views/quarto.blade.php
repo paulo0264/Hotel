@@ -6,7 +6,7 @@
 @section('content')
 
 <main class="mt-5 pt-5">
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="container mt-5">
             <a href="/add_quarto" class="btn btn-primary btn-md mb-3">Novo Quarto</a>
 

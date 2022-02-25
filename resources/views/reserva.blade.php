@@ -8,7 +8,7 @@
 <main class="mt-5 pt-5">
 
     <div class="container">
-    <h2 class="mb-3">Realizar Reserva</h2>
+        <h2 class="mb-3">Realizar Reserva</h2>
         <form action="" method="post">
             <label for="nim">Nome:</label>
             <input type="text" class="form-control">
@@ -35,11 +35,11 @@
             <div class="row">
                 <div class="col">
                     <label>Check-in:</label>
-                    <input type="date" class="form-control" name="DateIn" placeholder="Please Enter Price"  />
+                    <input type="date" class="form-control" name="DateIn" placeholder="Please Enter Price" />
                 </div>
                 <div class="col">
                     <label>Check-out:</label>
-                    <input type="date" class="form-control" name="DateOut" placeholder="Please Enter Price"  />
+                    <input type="date" class="form-control" name="DateOut" placeholder="Please Enter Price" />
                 </div>
             </div>
 

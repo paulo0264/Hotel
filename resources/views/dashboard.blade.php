@@ -70,47 +70,64 @@
                     <th>RESERVADO</th>
                     <th>CHECK-IN</th>
                     <th>CHECK-OUT</th>
+                    <th></th>
                     <th>AÇÕES</th>
+                    <th></th>
                 </thead>
                 <tbody>
+                @foreach($reservas as $reserva)
                     <tr>
-                        <td>45</td>
-                        <td>Antonio Jose alves</td>
-                        <td>Apartamento Luxo 386</td>
-                        <td>20/10/2022</td>
-                        <td>20/12/2022</td>
+                        <td>{{$reserva->id}}</td>
+                        <td>{{$reserva->name}}</td>
+                        <td>{{$reserva->quarto}}</td>
+                        <td>{{$reserva->checkin}}</td>
+                        <td>{{$reserva->checkout}}</td>
                         <td>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                    <a href="" class="btn btn-sm btn-primary">Ver</a>
+                                <a href="{{ route('editar_reserva', ['id'=>$reserva->id])}}" title="Editar Acomodação" class="btn btn-sm btn-primary" role="button"><i class="bi bi-eye"></i></a>
                                 </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                    <a href="" class="btn btn-sm btn-warning">Editar</a>
+                                <a href="{{ route('editar_reserva', ['id'=>$reserva->id])}}" title="Editar Acomodação" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <a title="Excluir Acomodação" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash-fill"></i></a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>52</td>
-                        <td>Maria jose dos santos</td>
-                        <td>Apartamento Duplo 465</td>
-                        <td>20/05/2022</td>
-                        <td>20/06/2022</td>
-                        <td>
-                            <div class="row">
-                                <div class="col d-flex justify-content-center">
-                                    <a href="" class="btn btn-sm btn-primary">Ver</a>
-                                </div>
-                                <div class="col d-flex justify-content-center">
-                                    <a href="" class="btn btn-sm btn-warning">Editar</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 </main>
+
+<!-- Modal Excluir -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Excluir</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            Tem certeza que Deseja Excluir essa Reserva?
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</a>
+        <a href="{{ route('reserva', ['id'=>$reserva->id])}}" class="btn btn-danger">Deletar</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection

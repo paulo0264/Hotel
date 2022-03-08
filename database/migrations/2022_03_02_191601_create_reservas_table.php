@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuartoTable extends Migration
+class CreateReservasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,16 @@ class CreateQuartoTable extends Migration
      */
     public function up()
     {
-        Schema::create('quarto', function (Blueprint $table) {
+        Schema::create('reservas', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description');
-            $table->double('price', 15, 2);
-            $table->string('image');
+            $table->string('cpf');
+            $table->date('nascimento');
+            $table->string('telefone');
+            $table->string('endereco');
+            $table->string('quarto');
+            $table->date('checkin');
+            $table->date('checkout');
             $table->timestamps();
         });
     }
@@ -30,6 +34,6 @@ class CreateQuartoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quarto');
+        Schema::dropIfExists('reservas');
     }
 }

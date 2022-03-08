@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePreReservaTable extends Migration
+class CreateQuartosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreatePreReservaTable extends Migration
      */
     public function up()
     {
-        Schema::create('welcome', function (Blueprint $table) {
+        Schema::create('quartos', function (Blueprint $table) {
             $table->id();
-            $table->date('check_in');
-            $table->date('check_out');
             $table->string('name');
-            $table->string('telefone');
-            $table->string('email');
-            $table->string('quarto');
+            $table->double('price', 15, 2);
+            $table->string('image');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreatePreReservaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pre_reserva');
+        Schema::dropIfExists('quartos');
     }
 }

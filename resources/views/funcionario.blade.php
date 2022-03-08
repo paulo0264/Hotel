@@ -1,28 +1,43 @@
 @extends('layouts.admin')
 
-@section('title', 'Funcionario')
+@section('title', 'Cadastrar Funcionario')
 
 
 @section('content')
 
 <main class="mt-5 pt-5">
-    <div class="container-fluid">
+    <div class="container">
+        <h2 class="mb-3">Cadastrar Funcionário</h2>
         <form action="" method="post">
-            <label for="nim">Nome</label>
-            <input type="text" class="form-control">
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Nome</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Cpf</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Data de Nascimento</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Endereço</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Telefone</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Efetivação</label>
+                <input type="email" class="form-control" id="inputEmail4">
+            </div>
 
-            <label for="nim">Cpf</label>
-            <input type="text" class="form-control">
-
-            <label for="">Quartos</label>
-            <select name="" id="" class="form-select">
-                <option value="">Quarto Duplo</option>
-                <option value="">Quarto Luxo 326</option>
-                <option value="">Quarto Luxo 256</option>
-            </select>
-
-            <label for="nim">Endereço</label>
-            <input type="text" class="form-control">
 
             <input class="btn btn-primary mt-3" type="submit" value="Cadastrar">
         </form>

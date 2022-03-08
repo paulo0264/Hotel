@@ -51,7 +51,7 @@
             <nav class="navbar-dark">
                 <ul class="navbar-nav">
                     <li>
-                        <a href="#" class="nav-link px-3 active">
+                        <a href="/dashboard" class="nav-link px-3 active">
                             <span class="me-2"><i class="bi bi-speedometer2"></i></span>
                             <span>Painel Administrativo</span>
                         </a>

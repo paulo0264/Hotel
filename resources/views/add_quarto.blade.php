@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Quartos')
+@section('title', 'Cadastrar Quartos')
 
 
 @section('content')
@@ -13,7 +13,7 @@
             @csrf
             <div class="form-group">
                 <label>Acomodação</label>
-                <input class="form-control" name="name" />
+                <input type="text" class="form-control" name="name" />
             </div>
 
             <div class="form-group">

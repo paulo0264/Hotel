@@ -105,11 +105,12 @@
                 <div class="card text-center">
                     <img src="img/room1.jpg" class="card-img-top" alt="quartos">
                     <div class="card-body">
-                        <h5 class="card-title primary-color">Acomodações Luxo</h5>
+                        <h5 class="card-title primary-color">Acomodações Simples</h5>
                         <p class="card-text secondary-color">
-                            Conheça nossas acomodações de Luxo.
+                            Conheça nossas acomodações Simples.
                         </p>
-                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                        <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#simplesModal">Ver
+                            Fotos</a>
                         <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservar</a>
                     </div>
                 </div>
@@ -126,12 +127,13 @@
                 <div class="card text-center">
                     <img src="img/room2.jpg" class="card-img-top" alt="quartos">
                     <div class="card-body">
-                        <h5 class="card-title primary-color">Super Luxo</h5>
+                        <h5 class="card-title primary-color">Luxo</h5>
                         <p class="card-text secondary-color">
-                            Conheça nossas acomodações Super Luxo.
+                            Conheça nossas acomodações Luxo.
                         </p>
-                        <a href="#" class="btn btn-dark">Ver Fotos</a>
-                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
+                        <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#luxoModal">Ver
+                            Fotos</a>
+                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -140,12 +142,13 @@
                 <div class="card text-center">
                     <img src="img/room3.jpg" class="card-img-top" alt="quartos">
                     <div class="card-body">
-                        <h5 class="card-title primary-color">Simples</h5>
+                        <h5 class="card-title primary-color">Super Luxo</h5>
                         <p class="card-text secondary-color">
-                            Conheça nossas acomodações Simples.
+                            Conheça nossas acomodações Super Luxo.
                         </p>
-                        <a href="#" class="btn btn-dark">Ver Fotos</a>
-                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
+                        <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#superluxoModal">Ver
+                            Fotos</a>
+                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -227,66 +230,288 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal Pré Reserva-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">Fazer Pre-Reserva</h2>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div class="container">
-        <p class="mb-3">
-            Obs: Ao fazer seu cadastro da Pré reserva,
-            isso não garante sua acomodação, sua reserva estará garantida assim que um dba_closenossos atendentes te ligar e confirmar
-            mediante o pagamento de 50% da estadia.
-        </p>
-        <form action="/reserva" method="POST">
-        @csrf
-            <label for="nim">Nome:</label>
-            <input type="text" name="name" class="form-control">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Fazer Pre-Reserva</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <p class="mb-3">
+                        Obs: Ao fazer seu cadastro da Pré reserva,
+                        isso não garante sua acomodação, sua reserva estará garantida assim que um dba_closenossos
+                        atendentes te ligar e confirmar
+                        mediante o pagamento de 50% da estadia.
+                    </p>
+                    <form action="/reserva" method="POST">
+                        @csrf
+                        <label for="nim">Nome:</label>
+                        <input type="text" name="name" class="form-control">
 
-            <label for="nim">Cpf:</label>
-            <input type="text" name="cpf" class="form-control">
+                        <label for="nim">Cpf:</label>
+                        <input type="text" name="cpf" class="form-control">
 
-            <label for="nim">Data de Nascimento:</label>
-            <input type="date" name="nascimento" class="form-control">
+                        <label for="nim">Data de Nascimento:</label>
+                        <input type="date" name="nascimento" class="form-control">
 
-            <label for="nim">Telefone:</label>
-            <input type="text" name="telefone" class="form-control">
+                        <label for="nim">Telefone:</label>
+                        <input type="text" name="telefone" class="form-control">
 
-            <label for="nim">Endereço:</label>
-            <input type="text" name="endereco" class="form-control">
+                        <label for="nim">Endereço:</label>
+                        <input type="text" name="endereco" class="form-control">
 
-            <label for="">Quartos:</label>
-            <select type="text" name="quarto" id="" class="form-select">
-                <option value="Quarto Duplo">Quarto Duplo</option>
-                <option value="Quarto Luxo 326">Quarto Luxo 326</option>
-                <option value="Quarto Luxo 256">Quarto Luxo 256</option>
-            </select>
+                        <label for="">Quartos:</label>
+                        <select type="text" name="quarto" id="" class="form-select">
+                            <option value="Quarto Duplo">Quarto Duplo</option>
+                            <option value="Quarto Luxo 326">Quarto Luxo 326</option>
+                            <option value="Quarto Luxo 256">Quarto Luxo 256</option>
+                        </select>
 
-            <div class="row">
-                <div class="col">
-                    <label>Check-in:</label>
-                    <input type="date" class="form-control" name="checkin" placeholder="Please Enter Price" />
-                </div>
-                <div class="col">
-                    <label>Check-out:</label>
-                    <input type="date" class="form-control" name="checkout" placeholder="Please Enter Price" />
+                        <div class="row">
+                            <div class="col">
+                                <label>Check-in:</label>
+                                <input type="date" class="form-control" name="checkin"
+                                    placeholder="Please Enter Price" />
+                            </div>
+                            <div class="col">
+                                <label>Check-out:</label>
+                                <input type="date" class="form-control" name="checkout"
+                                    placeholder="Please Enter Price" />
+                            </div>
+                        </div>
+
+                        <input class="btn btn-primary mt-3" type="submit" value="Cadastrar">
+                    </form>
                 </div>
             </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <input class="btn btn-primary mt-3" type="submit" value="Cadastrar">
-        </form>
+<!-- Modal Categoria Simples -->
+<div class="modal fade" id="simplesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Acomodações Simples</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!-- DESTAQUES -->
+                <div class="container" id="featured-container">
+                    <div class="container mt-3" id="featured-container">
+                        <div class="row" id="acomodações">
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room1.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Acomodações Luxo</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações de Luxo.
+                                        </p>
+                                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
+                                            data-bs-target="#simplesModal">Ver Fotos</a>
+                                        <a class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal">
+                                <div class="content">
+                                    <h1 class="title">Olá, eu sou um modal!</h1>
+                                    <p class="text">Você pode me fechar clicando fora desta área.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room2.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Super Luxo</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações Super Luxo.
+                                        </p>
+                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room3.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Simples</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações Simples.
+                                        </p>
+                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+</div>
+
+<!-- Modal Categoria Luxo -->
+<div class="modal fade" id="luxoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Acomodações Luxo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!-- DESTAQUES -->
+                <div class="container" id="featured-container">
+                    <div class="container mt-3" id="featured-container">
+                        <div class="row" id="acomodações">
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room1.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Acomodações Luxo</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações de Luxo.
+                                        </p>
+                                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
+                                            data-bs-target="#simplesModal">Ver Fotos</a>
+                                        <a class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal">
+                                <div class="content">
+                                    <h1 class="title">Olá, eu sou um modal!</h1>
+                                    <p class="text">Você pode me fechar clicando fora desta área.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room2.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Super Luxo</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações Super Luxo.
+                                        </p>
+                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                                        <a href="/exampleModal" class="btn btn-primary">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room3.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Simples</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações Simples.
+                                        </p>
+                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                                        <a href="/exampleModal" class="btn btn-primary">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
+</div>
+
+<!-- Modal Categoria Super Luxo -->
+<div class="modal fade" id="superluxoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Acomodações Super Luxo</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!-- DESTAQUES -->
+                <div class="container" id="featured-container">
+                    <div class="container mt-3" id="featured-container">
+                        <div class="row" id="acomodações">
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room1.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Acomodações Luxo</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações de Luxo.
+                                        </p>
+                                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
+                                            data-bs-target="#simplesModal">Ver Fotos</a>
+                                        <a class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal">
+                                <div class="content">
+                                    <h1 class="title">Olá, eu sou um modal!</h1>
+                                    <p class="text">Você pode me fechar clicando fora desta área.</p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room2.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Super Luxo</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações Super Luxo.
+                                        </p>
+                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img src="img/room3.jpg" class="card-img-top" alt="quartos">
+                                    <div class="card-body">
+                                        <h5 class="card-title primary-color">Simples</h5>
+                                        <p class="card-text secondary-color">
+                                            Conheça nossas acomodações Simples.
+                                        </p>
+                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+                                        <a href="/superluxo" class="btn btn-primary">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection

@@ -1,9 +1,10 @@
 
 <x-guest-layout>
-    <x-jet-authentication-card>
+    <x-jet-authentication-card class="container">
 
         <x-slot name="logo">
-           <x-jet-authentication-card-logo />
+           <!--<x-jet-authentication-card-logo />-->
+           <h3 class="fw-bold">Gerenciar Hotel</h3>
         </x-slot>
 
 
@@ -42,7 +43,7 @@
                     </a>
                 @endif
 
-                <x-jet-button class="ml-4">
+                <x-jet-button class="btn btn-primary ml-2">
                     {{ __('Logar') }}
                 </x-jet-button>
             </div>

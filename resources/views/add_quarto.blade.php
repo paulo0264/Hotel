@@ -9,7 +9,7 @@
 
     <div class="container">
         <h2 class="mb-3">Adicionar Quartos</h2>
-        <form action="/add_quarto" method="POST">
+        <form action="/add_quarto" method="POST" enctype="multpart/form-data">
             @csrf
             <div class="form-group">
                 <label>Acomodação</label>

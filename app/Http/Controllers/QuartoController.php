@@ -27,15 +27,6 @@ class QuartoController extends Controller
 
             Quarto::create($data);
 
-        /*$data = new Quarto;
-
-            $data->name = $request->name;
-            $data->price = $request->price;
-            $data->image = $request->image;
-            $data->description = $request->description;
-
-        $data->save();*/
-
         return redirect('/quarto');
     }
 

@@ -31,31 +31,7 @@ class ReservaController extends Controller
 
             Reserva::create($data);
 
-        /*$data = new Quarto;
-
-            $data->name = $request->name;
-            $data->price = $request->price;
-            $data->image = $request->image;
-            $data->description = $request->description;
-
-        $data->save();*/
-
         return redirect('/reserva');
-
-        /*$reserva = new Reserva;
-
-        $reserva->name = $request->name;
-        $reserva->cpf = $request->cpf;
-        $reserva->nascimento = $request->nascimento;
-        $reserva->telefone = $request->telefone;
-        $reserva->endereco = $request->endereco;
-        $reserva->quarto = $request->quarto;
-        $reserva->checkin = $request->checkin;
-        $reserva->checkout = $request->checkout;
-
-        $reserva->save();
-
-        return redirect('/reserva');*/
     }
 
     public function show(){
@@ -65,13 +41,13 @@ class ReservaController extends Controller
         return view('/dashboard', ['reservas'=>$data]);
     }
 
-    /*public function destroy($id){
+    public function destroy($id){
 
-        $data = Quarto::findOrFail($id);
+        $data = Reserva::findOrFail($id);
         $data->delete();
 
         return "Apartamento Excluido com sucesso!!!!!";
-    }*/
+    }
 
     public function edit($id){
 

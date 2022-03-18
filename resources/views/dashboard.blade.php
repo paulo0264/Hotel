@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-3 mb-3">
                 <div class="card bg-primary text-white h-100">
-                    <h2 class="card-body py-3">25</h2>
+                    <h2 class="card-body py-3">5</h2>
                     <div class="card-footer d-flex">
                         Hospedes
                         <span class="ms-auto">
@@ -62,6 +62,16 @@
 
         <div class="container mt-5">
             <a href="/reserva" class="btn btn-primary btn-md mb-3">Nova Reserva</a>
+            @if(session()->has('edit'))
+            <div class="alert alert-success">
+                <p>{{session('edit')}}</p>
+            </div>
+            @endif
+            @if(session()->has('delete'))
+            <div class="alert alert-danger">
+                <p>{{session('delete')}}</p>
+            </div>
+            @endif
 
             <table class="table table-striped table-hover table-bordered">
                 <thead class="table-dark">
@@ -75,7 +85,7 @@
                     <th></th>
                 </thead>
                 <tbody>
-                @foreach($reservas as $reserva)
+                    @foreach($reservas as $reserva)
                     <tr>
                         <td>{{$reserva->id}}</td>
                         <td>{{$reserva->name}}</td>
@@ -85,49 +95,83 @@
                         <td>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                <a href="{{ route('editar_reserva', ['id'=>$reserva->id])}}" title="Editar Acomodação" class="btn btn-sm btn-primary" role="button"><i class="bi bi-eye"></i></a>
+                                    <a title="Editar Acomodação" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#verModal" role="button"><i class="bi bi-eye"></i></a>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                <a href="{{ route('editar_reserva', ['id'=>$reserva->id])}}" title="Editar Acomodação" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                    <a href="{{ route('editar_reserva', ['id'=>$reserva->id])}}"
+                                        title="Editar Acomodação" class="btn btn-sm btn-warning"><i
+                                            class="bi bi-pencil-square"></i></a>
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                    <a title="Excluir Acomodação" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-trash-fill"></i></a>
+                                    <a title="Excluir Acomodação" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal"><i class="bi bi-trash-fill"></i></a>
                                 </div>
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>
     </div>
+    {{ $reservas->links('vendor.pagination.custon') }}
 </main>
 
 <!-- Modal Excluir -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Excluir</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-            Tem certeza que Deseja Excluir essa Reserva?
-      </div>
-      <div class="modal-footer">
-        <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</a>
-        <a href="{{ route('reserva', ['id'=>$reserva->id])}}" class="btn btn-danger">Deletar</a>
-      </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Excluir</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza que Deseja Excluir essa Reserva?
+            </div>
+            <div class="modal-footer">
+                <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</a>
+                <a href="{{ route('reserva', ['id'=>$reserva->id])}}" class="btn btn-danger">Deletar</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
+
+<!-- Modal Excluir -->
+<div class="modal fade" id="verModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Dados da Reserva</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="list-group">
+                    <li class="list-group-item">{{$reserva->id}}</li>
+                    <li class="list-group-item">{{$reserva->name}}</li>
+                    <li class="list-group-item">{{$reserva->cpf}}</li>
+                    <li class="list-group-item">{{$reserva->nascimento}}</li>
+                    <li class="list-group-item">{{$reserva->telefone}}</li>
+                    <li class="list-group-item">{{$reserva->endereco}}</li>
+                    <li class="list-group-item">{{$reserva->quarto}}</li>
+                    <li class="list-group-item">{{$reserva->checkin}}</li>
+                    <li class="list-group-item">{{$reserva->checkout}}</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @endsection

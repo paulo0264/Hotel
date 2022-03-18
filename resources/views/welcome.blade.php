@@ -24,14 +24,14 @@
             <div class="carousel-item">
                 <img src="img/banner-2.jpg" class="d-block w-100" alt="Casa 2" />
                 <div class="carousel-caption">
-                    <h5>Vista para o Mar</h5>
+                    <h5>Paz e Tranquilidade </h5>
                     <!--<a href="#" class="btn btn-dark">Ver Projeto</a>-->
                 </div>
             </div>
             <div class="carousel-item">
                 <img src="img/banner-3.jpg" class="d-block w-100" alt="Casa 3" />
                 <div class="carousel-caption">
-                    <h5>Paz e Tranquilidade</h5>
+                    <h5>Vista para o Mar</h5>
                     <!--<a href="#" class="btn btn-dark">Ver Projeto</a>-->
                 </div>
             </div>
@@ -111,7 +111,7 @@
                         </p>
                         <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#simplesModal">Ver
                             Fotos</a>
-                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservar</a>
+
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
                         </p>
                         <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#luxoModal">Ver
                             Fotos</a>
-                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservar</a>
+
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                         </p>
                         <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#superluxoModal">Ver
                             Fotos</a>
-                        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Reservar</a>
+
                     </div>
                 </div>
             </div>
@@ -207,22 +207,6 @@
                             nobis quas doloribus, atque, ut id similique eligendi, ab
                             soluta magnam maxime cum debitis.
                         </p>
-                    </div>
-                    <div class="col-12" id="info-numbers">
-                        <div class="row">
-                            <div class="col-4">
-                                <h3 class="primary-color">18</h3>
-                                <p class="secondary-color">Anos na construção civil</p>
-                            </div>
-                            <div class="col-4">
-                                <h3 class="primary-color">95</h3>
-                                <p class="secondary-color">Projetos executados</p>
-                            </div>
-                            <div class="col-4">
-                                <h3 class="primary-color">639</h3>
-                                <p class="secondary-color">Clientes</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -317,8 +301,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações de Luxo.
                                         </p>
-                                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
-                                            data-bs-target="#simplesModal">Ver Fotos</a>
                                         <a class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal">Reservar</a>
                                     </div>
@@ -340,7 +322,7 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações Super Luxo.
                                         </p>
-                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+
                                         <a href="/superluxo" class="btn btn-primary">Reservar</a>
                                     </div>
                                 </div>
@@ -354,7 +336,7 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações Simples.
                                         </p>
-                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
+
                                         <a href="/superluxo" class="btn btn-primary">Reservar</a>
                                     </div>
                                 </div>
@@ -390,8 +372,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações de Luxo.
                                         </p>
-                                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
-                                            data-bs-target="#simplesModal">Ver Fotos</a>
                                         <a class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal">Reservar</a>
                                     </div>
@@ -413,7 +393,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações Super Luxo.
                                         </p>
-                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
                                         <a href="/exampleModal" class="btn btn-primary">Reservar</a>
                                     </div>
                                 </div>
@@ -427,7 +406,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações Simples.
                                         </p>
-                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
                                         <a href="/exampleModal" class="btn btn-primary">Reservar</a>
                                     </div>
                                 </div>
@@ -463,8 +441,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações de Luxo.
                                         </p>
-                                        <a href="#" class="btn btn-dark" data-bs-toggle="modal"
-                                            data-bs-target="#simplesModal">Ver Fotos</a>
                                         <a class="btn btn-primary" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal">Reservar</a>
                                     </div>
@@ -486,7 +462,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações Super Luxo.
                                         </p>
-                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
                                         <a href="/superluxo" class="btn btn-primary">Reservar</a>
                                     </div>
                                 </div>
@@ -500,7 +475,6 @@
                                         <p class="card-text secondary-color">
                                             Conheça nossas acomodações Simples.
                                         </p>
-                                        <a href="#" class="btn btn-dark">Ver Fotos</a>
                                         <a href="/superluxo" class="btn btn-primary">Reservar</a>
                                     </div>
                                 </div>

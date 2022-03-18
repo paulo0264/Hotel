@@ -9,6 +9,7 @@ use App\Models\Reserva;
 class ReservaController extends Controller
 {
     public function index(){
+
         return view('reserva');
     }
 
@@ -31,47 +32,25 @@ class ReservaController extends Controller
 
             Reserva::create($data);
 
-        /*$data = new Quarto;
+        return redirect('/reserva')->with('success', "Reserva Cadastrada com sucesso!");
 
-            $data->name = $request->name;
-            $data->price = $request->price;
-            $data->image = $request->image;
-            $data->description = $request->description;
-
-        $data->save();*/
-
-        return redirect('/reserva');
-
-        /*$reserva = new Reserva;
-
-        $reserva->name = $request->name;
-        $reserva->cpf = $request->cpf;
-        $reserva->nascimento = $request->nascimento;
-        $reserva->telefone = $request->telefone;
-        $reserva->endereco = $request->endereco;
-        $reserva->quarto = $request->quarto;
-        $reserva->checkin = $request->checkin;
-        $reserva->checkout = $request->checkout;
-
-        $reserva->save();
-
-        return redirect('/reserva');*/
     }
 
     public function show(){
 
-        $data = Reserva::all();
+        //$data = Reserva::all();
+        $data = Reserva::latest()->paginate(3);
 
         return view('/dashboard', ['reservas'=>$data]);
     }
 
-    /*public function destroy($id){
+    public function destroy($id){
 
-        $data = Quarto::findOrFail($id);
+        $data = Reserva::findOrFail($id);
         $data->delete();
 
-        return "Apartamento Excluido com sucesso!!!!!";
-    }*/
+        return redirect('/dashboard')->with('delete', "Reserva Excluída com sucesso!");
+    }
 
     public function edit($id){
 
@@ -94,6 +73,6 @@ class ReservaController extends Controller
             'checkout' => request('checkout')
         ]);
 
-        return "Reserva Atualizado com sucesso!!!!!";
+        return redirect('/dashboard')->with('edit', "Reserva Atualizada com sucesso!");
     }
 }

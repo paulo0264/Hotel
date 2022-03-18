@@ -27,7 +27,7 @@ class QuartoController extends Controller
 
             Quarto::create($data);
 
-        return redirect('/quarto');
+        return redirect('/quarto')->with('success', "Acomodação Cadastrada com sucesso!");
     }
 
     public function show(){
@@ -42,7 +42,9 @@ class QuartoController extends Controller
         $data = Quarto::findOrFail($id);
         $data->delete();
 
-        return "Apartamento Excluido com sucesso!!!!!";
+        return redirect('/quarto')->with('delete', "Acomodação Excluída com sucesso!");
+        //return redirect(route('quarto'))->with('delete', "Acomodação Excluída com sucesso!");
+
     }
 
     public function edit($id){
@@ -62,6 +64,6 @@ class QuartoController extends Controller
             'description' => request('description')
         ]);
 
-        return "Apartamento Atualizado com sucesso!!!!!";
+        return redirect('/quarto')->with('edit', "Acomodação Atualizada com sucesso!");
     }
 }

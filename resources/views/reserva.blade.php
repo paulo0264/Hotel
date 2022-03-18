@@ -7,8 +7,15 @@
 
 <main class="mt-5 pt-5">
 
-    <div class="container">
+    <div class="container mb-4">
         <h2 class="mb-3">Realizar Reserva</h2>
+
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    <p>{{session('success')}}</p>
+                </div>
+            @endif
+
         <form action="/reserva" method="POST">
         @csrf
             <label for="nim">Nome:</label>
@@ -28,9 +35,9 @@
 
             <label for="">Quartos:</label>
             <select type="text" name="quarto" id="" class="form-select">
-                <option value="Quarto Duplo">Quarto Duplo</option>
-                <option value="Quarto Luxo 326">Quarto Luxo 326</option>
-                <option value="Quarto Luxo 256">Quarto Luxo 256</option>
+                <option value="Quarto Luxo 326">Acomodação Simples</option>
+                <option value="Quarto Luxo 256">Acomodação Luxo</option>
+                <option value="Quarto Luxo 256">Acomodação Super Luxo</option>
             </select>
 
             <div class="row">

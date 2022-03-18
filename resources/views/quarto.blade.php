@@ -9,6 +9,21 @@
     <div class="container-fluid">
         <div class="container mt-5">
             <a href="/add_quarto" class="btn btn-primary btn-md mb-3">Novo Quarto</a>
+            @if(session()->has('delete'))
+                <div class="alert alert-danger">
+                    <p>{{session('delete')}}</p>
+                </div>
+            @endif
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    <p>{{session('success')}}</p>
+                </div>
+            @endif
+            @if(session()->has('edit'))
+                <div class="alert alert-success">
+                    <p>{{session('edit')}}</p>
+                </div>
+            @endif
 
             <table class="table table-striped table-hover table-bordered">
 
@@ -22,6 +37,10 @@
                 </thead>
                 <tbody>
                 @foreach($quartos as $quarto)
+                    @if($quarto!= $quarto)
+                    <h2>Não Existe registro</h2>
+
+                    @endif
                     <tr>
                         <td>{{$quarto->id}}</</td>
                         <td>{{$quarto->name}}</td>

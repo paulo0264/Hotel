@@ -32,8 +32,12 @@ class ReservaController extends Controller
 
             Reserva::create($data);
 
+<<<<<<< HEAD
         return redirect('/reserva')->with('success', "Reserva Cadastrada com sucesso!");
 
+=======
+        return redirect('/reserva');
+>>>>>>> refs/remotes/origin/master
     }
 
     public function show(){
@@ -49,7 +53,11 @@ class ReservaController extends Controller
         $data = Reserva::findOrFail($id);
         $data->delete();
 
+<<<<<<< HEAD
         return redirect('/dashboard')->with('delete', "Reserva Excluída com sucesso!");
+=======
+        return "Apartamento Excluido com sucesso!!!!!";
+>>>>>>> refs/remotes/origin/master
     }
 
     public function edit($id){

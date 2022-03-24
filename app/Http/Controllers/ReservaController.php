@@ -10,68 +10,78 @@ class ReservaController extends Controller
 {
     public function index(){
 
-        return view('reserva');
+        $reservas = Reserva::paginate(3);
+
+        return view('dashboard', ['reservas'=>$reservas]);
+
+
+        return view('dashboard');
     }
 
     public function create(){
-        return view('reserva');
+        return view('/reserva/create');
     }
 
     public function store(Request $request){
 
-        $data = [
-            'name' => request('name'),
-            'cpf' => request('cpf'),
-            'nascimento' => request('nascimento'),
-            'telefone' => request('telefone'),
-            'endereco' => request('endereco'),
-            'quarto' => request('quarto'),
-            'checkin' => request('checkin'),
-            'checkout' => request('checkout')
-            ];
+        $data = new Reserva;
 
-            Reserva::create($data);
+        $data-> name = $request->name;
+        $data-> cpf = $request->cpf;
+        $data-> nascimento = $request->nascimento;
+        $data-> telefone = $request->telefone;
+        $data-> endereco = $request->endereco;
+        $data-> quarto = $request->quarto;
+        $data-> checkin = $request->checkin;
+        $data-> checkout = $request->checkout;
 
-        return redirect('/reserva')->with('success', "Reserva Cadastrada com sucesso!");
+
+        //salvando no Banco
+        $data->save();
+
+        return redirect('dashboard')->with('success', "Reserva Cadastrada com sucesso!");
 
     }
 
-    public function show(){
+    /*public function show(){
 
         //$data = Reserva::all();
-        $data = Reserva::latest()->paginate(3);
+        $reservas = Reserva::latest()->paginate(3);
 
-        return view('/dashboard', ['reservas'=>$data]);
-    }
-
+        return view('dashboard', ['reservas'=>$reservas]);
+    }*/
     public function destroy($id){
 
-        $data = Reserva::findOrFail($id);
-        $data->delete();
+        $reserva = Reserva::find($id);
+        $reserva->delete();
 
         return redirect('/dashboard')->with('delete', "Reserva Excluída com sucesso!");
     }
 
     public function edit($id){
+        if(!$reserva = Reserva::find($id)){
+            return redirect()->back();
+        }
 
-        $data = Reserva::findOrFail($id);
+        return view('/editar_reserva', compact('reserva'));
 
-        return view('/editar_reserva', ['reserva'=>$data]);
     }
 
     public function update(Request $request, $id){
 
-        $data = Reserva::findOrFail($id);
-        $data->update([
-            'name' => request('name'),
-            'cpf' => request('cpf'),
-            'nascimento' => request('nascimento'),
-            'telefone' => request('telefone'),
-            'endereco' => request('endereco'),
-            'quarto' => request('quarto'),
-            'checkin' => request('checkin'),
-            'checkout' => request('checkout')
-        ]);
+        $store = new Reserva;
+
+        $store-> name = $request->name;
+        $store-> cpf = $request->cpf;
+        $store-> nascimento = $request->nascimento;
+        $store-> telefone = $request->telefone;
+        $store-> endereco = $request->endereco;
+        $store-> quarto = $request->quarto;
+        $store-> checkin = $request->checkin;
+        $store-> checkout = $request->checkout;
+
+         //save new customer
+         $store->save();
 
         return redirect('/dashboard')->with('edit', "Reserva Atualizada com sucesso!");
     }

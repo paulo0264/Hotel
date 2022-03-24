@@ -15,14 +15,14 @@ class CreateReservasTable extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('cpf');
-            $table->date('nascimento');
-            $table->string('telefone');
-            $table->string('endereco');
-            $table->string('quarto');
-            $table->date('checkin');
-            $table->date('checkout');
+            $table->string('name')->nullable();
+            $table->string('cpf')->nullable();
+            $table->date('nascimento')->nullable();
+            $table->string('telefone')->nullable();
+            $table->string('endereco')->nullable();
+            $table->string('quarto')->nullable();
+            $table->date('checkin')->nullable();
+            $table->date('checkout')->nullable();
             $table->timestamps();
         });
     }

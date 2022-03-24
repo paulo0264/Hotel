@@ -15,10 +15,10 @@ class CreateQuartosTable extends Migration
     {
         Schema::create('quartos', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->double('price', 15, 2);
-            $table->string('image');
-            $table->text('description');
+            $table->string('name')->nullable();
+            $table->double('price', 15, 2)->nullable();
+            $table->string('image')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

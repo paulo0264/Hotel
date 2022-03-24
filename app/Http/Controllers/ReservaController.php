@@ -39,8 +39,16 @@ class ReservaController extends Controller
         //salvando no Banco
         $data->save();
 
+<<<<<<< HEAD
         return redirect('dashboard')->with('success', "Reserva Cadastrada com sucesso!");
+=======
+<<<<<<< HEAD
+        return redirect('/reserva')->with('success', "Reserva Cadastrada com sucesso!");
+>>>>>>> 3f59c64891b3272ddec9051a5319f42468e27382
 
+=======
+        return redirect('/reserva');
+>>>>>>> refs/remotes/origin/master
     }
 
     /*public function show(){
@@ -55,7 +63,11 @@ class ReservaController extends Controller
         $reserva = Reserva::find($id);
         $reserva->delete();
 
+<<<<<<< HEAD
         return redirect('/dashboard')->with('delete', "Reserva Excluída com sucesso!");
+=======
+        return "Apartamento Excluido com sucesso!!!!!";
+>>>>>>> refs/remotes/origin/master
     }
 
     public function edit($id){

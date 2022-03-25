@@ -38,10 +38,10 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card bg-success text-white h-100">
-                    @foreach($reservas as $reserva)
 
-                    <h2 class="card-body py-3">{{$reserva->id}}</h2>
-                    @endforeach
+
+                    <h2 class="card-body py-3">2</h2>
+
                     <div class="card-footer d-flex">
                         Check-in
                         <span class="ms-auto">
@@ -104,7 +104,7 @@
                         <td>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                    <a title="Editar Acomodação" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                    <a  href="{{ route('user.ver',['id'=>$reserva]) }}" title="Ver Acomodação" class="btn btn-sm btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#verModal" role="button"><i class="bi bi-eye"></i></a>
                                 </div>
                             </div>
@@ -112,7 +112,7 @@
                         <td>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                    <a data-bs-toggle="modal" data-bs-target="#editarModal"
+                                    <a href="{{ route('editar_reserva',['id'=>$reserva->id]) }}" data-bs-toggle="modal" data-bs-target="#editarModal"
                                         title="Editar Acomodação" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
                                 </div>
                             </div>
@@ -127,6 +127,65 @@
                         </td>
                     </tr>
 
+                    <!-- Modal Editar-->
+<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h2 class="mb-3">Editar Reserva</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container mb-4">
+
+                    <form action="{{route('atualizar_reserva', ['id'=>$reserva->id])}}" method="POST">
+                    @csrf
+
+                        <label for="nim">Nome:</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Nome" required autofocus autocomplete="nome" value="{{$reserva->name}}">
+
+                        <label for="nim">Cpf:</label>
+                        <input type="text" id="cpf" name="cpf" class="form-control" placeholder="Cpf" required autofocus autocomplete="cpf" value="{{$reserva->cpf}}">
+
+                        <label for="nim">Data de Nascimento:</label>
+                        <input type="date" id="nascimento" name="nascimento" class="form-control" placeholder="Nascimento" required autofocus autocomplete="nascimento" value="{{$reserva->nascimento}}">
+
+                        <label for="nim">Telefone:</label>
+                        <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone" required autofocus autocomplete="telefone" value="{{$reserva->telefone}}">
+
+                        <label for="nim">Endereço:</label>
+                        <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" required autofocus autocomplete="endereco" value="{{$reserva->endereco}}">
+
+                        <label>Quartos:</label>
+                        <select type="text" id="quarto" name="quarto" id="" class="form-select" placeholder="Quarto" required autofocus autocomplete="quarto" value="{{$reserva->quarto}}">
+                            <option value="Quarto Luxo 326">Acomodação Simples</option>
+                            <option value="Quarto Luxo 256">Acomodação Luxo</option>
+                            <option value="Quarto Luxo 256">Acomodação Super Luxo</option>
+                        </select>
+
+                        <div class="row">
+                            <div class="col">
+                                <label>Check-in:</label>
+                                <input type="date" class="form-control" id="checkin" name="checkin" placeholder="Please Enter Price" placeholder="Check-in" required autofocus autocomplete="checkin" value="{{$reserva->checkin}}"/>
+                            </div>
+                            <div class="col">
+                                <label>Check-out:</label>
+                                <input type="date" class="form-control" id="checkout" name="checkout" placeholder="Please Enter Price" placeholder="Check-out" required autofocus autocomplete="checkout" value="{{$reserva->checkout}}"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Voltar</a>
+                            <input class="btn btn-primary mt-3" type="submit" value="Atualizar">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
                     <!-- Modal Excluir -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -139,7 +198,7 @@
                 Tem certeza que Deseja Excluir essa Reserva?
             </div>
             <div class="modal-footer">
-                <form method="post" action="{{ route('reserva.destroy', $reserva->id) }}">
+                <form action="{{ route('dashboard.destroy', $reserva->id) }}" method="post">
                     @csrf
                     <div class="form-item center">
                         <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</a>
@@ -221,67 +280,8 @@
     </div>
 </div>
 
-<!-- Modal Editar-->
-<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
 
-                <h2 class="mb-3">Editar Reserva</h2>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="container mb-4">
-
-                    <form action="{{ route('reserva.edit', $reserva->id) }}" method="post">
-                    @csrf
-                        <label for="nim">Nome:</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Nome" required autofocus autocomplete="nome" value="">
-
-                        <label for="nim">Cpf:</label>
-                        <input type="text" id="cpf" name="cpf" class="form-control" placeholder="Cpf" required autofocus autocomplete="cpf" value="">
-
-                        <label for="nim">Data de Nascimento:</label>
-                        <input type="date" id="nascimento" name="nascimento" class="form-control" placeholder="Nascimento" required autofocus autocomplete="nascimento" value="">
-
-                        <label for="nim">Telefone:</label>
-                        <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone" required autofocus autocomplete="telefone" value="">
-
-                        <label for="nim">Endereço:</label>
-                        <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" required autofocus autocomplete="endereco" value="">
-
-                        <label>Quartos:</label>
-                        <select type="text" id="quarto" name="quarto" id="" class="form-select" placeholder="Quarto" required autofocus autocomplete="quarto" value="">
-                            <option value="Quarto Luxo 326">Acomodação Simples</option>
-                            <option value="Quarto Luxo 256">Acomodação Luxo</option>
-                            <option value="Quarto Luxo 256">Acomodação Super Luxo</option>
-                        </select>
-
-                        <div class="row">
-                            <div class="col">
-                                <label>Check-in:</label>
-                                <input type="date" class="form-control" id="checkin" name="checkin" placeholder="Please Enter Price" placeholder="Check-in" required autofocus autocomplete="checkin" value=""/>
-                            </div>
-                            <div class="col">
-                                <label>Check-out:</label>
-                                <input type="date" class="form-control" id="checkout" name="checkout" placeholder="Please Enter Price" placeholder="Check-out" required autofocus autocomplete="checkout" value=""/>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Voltar</a>
-                            <input class="btn btn-primary mt-3" type="submit" value="Atualizar">
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Modal Excluir
+<!-- Modal Visualizar-->
 <div class="modal fade" id="verModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -290,24 +290,30 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+
+                @if($reserva)
                 <ul class="list-group">
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item">}</li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
+                    <li class="list-group-item">{{$reserva->id}}</li>
+                    <li class="list-group-item">{{$reserva->name}}</li>
+                    <li class="list-group-item">{{$reserva->cpf}}</li>
+                    <li class="list-group-item">{{$reserva->nascimento}}</li>
+                    <li class="list-group-item">{{$reserva->telefone}}</li>
+                    <li class="list-group-item">{{$reserva->endereco}}</li>
+                    <li class="list-group-item">{{$reserva->quarto}}</li>
+                    <li class="list-group-item">{{$reserva->checkin}}</li>
+                    <li class="list-group-item">{{$reserva->checkout}}</li>
                 </ul>
+
+                @endif
+
             </div>
             <div class="modal-footer">
                 <a href="{{ url()->previous() }}" class="btn btn-warning" data-bs-dismiss="modal">Voltar</a>
             </div>
         </div>
     </div>
-</div>-->
+</div>
+
 
 
 @endsection

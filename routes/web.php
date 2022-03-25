@@ -4,16 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\QuartoController;
 use App\Http\Controllers\ReservaController;
-/*
-Route::get('/welcome')->name('index');;
-Route::get('/welcome',[WelcomesController::class, 'create']);
-Route::post('/welcome',[WelcomesController::class, 'store']);
 
-//Acomodações
-Route::get('/luxo', [LuxoController::class, 'index']);
-Route::get('/luxo',[LuxoController::class, 'create']);
-Route::post('/luxo',[LuxoController::class, 'store']);
-//Fim Acomodações */
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,35 +28,20 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/funcionario', function ()
 })->name('funcionario');
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/quarto',[QuartoController::class, 'index'])->name('quarto');
-Route::middleware(['auth:sanctum', 'verified'])->get('/quarto',[QuartoController::class, 'show'])->name('quarto');
-Route::middleware(['auth:sanctum', 'verified'])->post('/add_quarto',[QuartoController::class, 'store'])->name('add_quarto');
-Route::middleware(['auth:sanctum', 'verified'])->get('/quarto/{id}',[QuartoController::class, 'destroy'])->name('quarto');
+Route::middleware(['auth:sanctum', 'verified'])->get('/quarto/ver',[QuartoController::class, 'index'])->name('quarto.ver');
+//Route::middleware(['auth:sanctum', 'verified'])->get('/quarto',[QuartoController::class, 'show'])->name('quarto');
+Route::middleware(['auth:sanctum', 'verified'])->get('/quarto',[QuartoController::class, 'create']);
+Route::middleware(['auth:sanctum', 'verified'])->post('/quarto',[QuartoController::class, 'store'])->name('salvar_quarto');
+//Route::middleware(['auth:sanctum', 'verified'])->post('/quarto/destroy/{id}',[QuartoController::class, 'destroy'])->name('quarto.destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('/editar_quarto/{id}',[QuartoController::class, 'edit'])->name('editar_quarto');
 Route::middleware(['auth:sanctum', 'verified'])->post('/atualizar_quarto/{id}',[QuartoController::class, 'update'])->name('atualizar_quarto');
 
-
-<<<<<<< HEAD
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[ReservaController::class, 'show'])->name('dashboard');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[ReservaController::class, 'index']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/reserva/create',[ReservaController::class, 'create']);
-Route::middleware(['auth:sanctum', 'verified'])->post('/salvar_reserva',[ReservaController::class, 'store'])->name('salvar_reserva');
-Route::middleware(['auth:sanctum', 'verified'])->post('/{id}reserva.destroy',[ReservaController::class, 'destroy'])->name('reserva.destroy');
-Route::middleware(['auth:sanctum', 'verified'])->get('/reserva/edit/{id}',[ReservaController::class, 'edit'])->name('reserva.edit');
-=======
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[ReservaController::class, 'show'])->name('reserva');
-Route::middleware(['auth:sanctum', 'verified'])->get('/reserva',[ReservaController::class, 'index']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/reserva/{id}',[ReservaController::class, 'destroy'])->name('reserva');
+Route::middleware(['auth:sanctum', 'verified'])->get('/user/ver/{id}',[ReservaController::class, 'show'])->name('user.ver');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',[ReservaController::class, 'index'])->name('dashboard');
 Route::middleware(['auth:sanctum', 'verified'])->get('/reserva',[ReservaController::class, 'create']);
-Route::middleware(['auth:sanctum', 'verified'])->post('/reserva',[ReservaController::class, 'store']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/reserva/{id}',[ReservaController::class, 'destroy'])->name('reserva');
+Route::middleware(['auth:sanctum', 'verified'])->post('/reserva',[ReservaController::class, 'store'])->name('salvar_reserva');
+Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard/destroy/{id}',[ReservaController::class, 'destroy'])->name('dashboard.destroy');
 Route::middleware(['auth:sanctum', 'verified'])->get('/editar_reserva/{id}',[ReservaController::class, 'edit'])->name('editar_reserva');
->>>>>>> 3f59c64891b3272ddec9051a5319f42468e27382
 Route::middleware(['auth:sanctum', 'verified'])->post('/atualizar_reserva/{id}',[ReservaController::class, 'update'])->name('atualizar_reserva');
 
-
-// Rota Adicionar Acomodações
-Route::middleware(['auth:sanctum', 'verified'])->get('/add_quarto',[QuartoController::class, 'index'])->name('add_quarto');
-Route::middleware(['auth:sanctum', 'verified'])->get('/add_quarto',[QuartoController::class, 'create']);
-//Route::middleware(['auth:sanctum', 'verified'])->post('/add_quarto',[QuartoController::class, 'store'])->name('add_quarto');
 

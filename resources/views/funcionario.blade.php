@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="container mt-5">
             <a href="/funcionario" class="btn btn-primary btn-md mb-3" data-bs-toggle="modal" data-bs-target="#funcionarioModal">Novo Funcionário</a>
-           <!-- @if(session()->has('delete'))
+            @if(session()->has('delete'))
             <div class="alert alert-danger">
                 <p>{{session('delete')}}</p>
             </div>
@@ -23,7 +23,7 @@
             <div class="alert alert-success">
                 <p>{{session('edit')}}</p>
             </div>
-            @endif-->
+            @endif
 
             <table class="table table-striped table-hover table-bordered">
 

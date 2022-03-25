@@ -11,10 +11,6 @@ class Quarto extends Model
 {
     //use HasFactory;
     //protected $fillable = ['quarto'];
-    protected $fillable = [
-        'name',
-        'price',
-        'image',
-        'description'
-    ];
+    protected $fillable = ['name','price','image','description'];
+    protected $table = 'quartos';
 }

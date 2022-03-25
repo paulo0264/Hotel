@@ -8,61 +8,49 @@ use App\Models\Quarto;
 
 class QuartoController extends Controller
 {
+    /*public function index(){
+        $quartos = Quarto::all();
+
+        return view('quarto.ver', ['quartos'=>$quartos]);
+    }*/
+
     public function index(){
-        return view('/quarto');
+
+        $quartos = Quarto::all();
+
+        return view('quarto.ver', ['quartos'=>$quartos]);
     }
 
     public function create(){
-        return view('/add_quarto');
+        return view('/quarto');
     }
 
     public function store(Request $request){
 
-        $data = [
-            'name' => request('name'),
-            'price' => request('price'),
-            'image' => request('image'),
-            'description' => request('description')
-            ];
+        Quarto::create($request->all());
 
-            Quarto::create($data);
-
-        return redirect('/quarto')->with('success', "Acomodação Cadastrada com sucesso!");
-    }
-
-    public function show(){
-
-        $data = Quarto::all();
-
-        return view('/quarto', ['quartos'=>$data]);
+        return redirect('quarto.ver')->with('success', "Acomodação Cadastrada com sucesso!");
     }
 
     public function destroy($id){
 
-        $data = Quarto::findOrFail($id);
-        $data->delete();
+        $quarto = quarto::find($id);
+        $quarto->delete();
 
-        return redirect('/quarto')->with('delete', "Acomodação Excluída com sucesso!");
-        //return redirect(route('quarto'))->with('delete', "Acomodação Excluída com sucesso!");
+        return redirect('/quarto')->with('delete', "Reserva Excluída com sucesso!");
 
     }
 
     public function edit($id){
 
-        $data = Quarto::findOrFail($id);
+        $quarto = Quarto::find($id);
 
-        return view('/editar_quarto', ['quarto'=>$data]);
+        return view('/editar_quarto', ['quarto'=>$quarto]);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request){
 
-        $quarto = Quarto::findOrFail($id);
-        $quarto->update([
-            'name' => request('name'),
-            'price' => request('price'),
-            'image' => request('image'),
-            'description' => request('description')
-        ]);
+        Quarto::findOrFail($request->id)->update($request->all());
 
         return redirect('/quarto')->with('edit', "Acomodação Atualizada com sucesso!");
     }
